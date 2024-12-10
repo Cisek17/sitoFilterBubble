@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Filter Bubble nei Social Network</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4f6281;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4f6281; /* Modificato */
+            color: #291134;
+            text-align: center;
+            padding: 20px 0;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #86888d;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1{
+            color: #817f81;
+        }
+
+        h2 {
+            color: #fffefe; /* Modificato */
+        }
+        .filter-bubble {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .bubble {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3c54ac;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .bubble:hover {
+            transform: scale(1.1);
+        }
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+        footer {
+            background-color: #b300ff; /* Modificato */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>La Filter Bubble nei Social Network</h1>
+        <p>Scopri come gli algoritmi dei social network creano una bolla informativa personalizzata</p>
+    </header>
+
+    <section>
+        <h2>Cos'è la "Filter Bubble"?</h2>
+        <p>
+            La "filter bubble" è un concetto introdotto da Eli Pariser nel suo libro omonimo. Si riferisce al fenomeno in cui i motori di ricerca e i social network filtrano i contenuti che vediamo, mostrando solo quelli che si allineano alle nostre preferenze e opinioni, creando una bolla che limita l'accesso a informazioni diverse.
+        </p>
+        <p>
+            Questo processo è gestito tramite algoritmi che personalizzano i contenuti in base alle nostre interazioni online (click, like, condivisioni, etc.). Ciò può portare a un'esperienza di navigazione ristretta e a una visione distorta del mondo.
+        </p>
+    </section>
+
+    <section>
+        <h2>Attività Interattiva: Esplora la tua "Bolla"!</h2>
+        <p>Seleziona diversi argomenti per vedere come l'algoritmo crea una bolla informativa:</p>
+        <div class="filter-bubble">
+            <div class="bubble" onclick="filterContent('Tecnologia')">Tecnologia</div>
+            <div class="bubble" onclick="filterContent('Politica')">Politica</div>
+            <div class="bubble" onclick="filterContent('Sport')">Sport</div>
+            <div class="bubble" onclick="filterContent('Cultura')">Cultura</div>
+        </div>
+        <div id="result"></div>
+    </section>
+
+    <section>
+        <h2>Riferimenti e Normative</h2>
+        <p>Per approfondire l'argomento e conoscere le normative sulla privacy e sugli algoritmi, puoi consultare i seguenti link:</p>
+        <ul>
+            <li><a href="https://www.ted.com/talks/eli_pariser_beware_online_filter_bubbles" target="_blank">TED Talk di Eli Pariser sulla Filter Bubble</a></li>
+            <li><a href="https://www.garanteprivacy.it" target="_blank">Garante per la protezione dei dati personali (Normative privacy)</a></li>
+            <li><a href="https://www.eff.org/issues/filter-bubbles" target="_blank">Electronic Frontier Foundation - Filter Bubbles</a></li>
+        </ul>
+    </section>
+
+  
+
+    <script>
+        function filterContent(topic) {
+            const result = document.getElementById("result");
+            let message = "Hai scelto: " + topic + ". ";
+            switch (topic) {
+                case 'Tecnologia':
+                    message += "Vedi post relativi alle ultime innovazioni tecnologiche, come IA e big data.";
+                    break;
+                case 'Politica':
+                    message += "Vedi post riguardanti le politiche locali e globali più attuali.";
+                    break;
+                case 'Sport':
+                    message += "Vedi post sui tuoi sport e atleti preferiti.";
+                    break;
+                case 'Cultura':
+                    message += "Vedi post su libri, film e eventi culturali.";
+                    break;
+            }
+            result.innerHTML = message;
+        }
+    </script>
+</body>
+</html>
